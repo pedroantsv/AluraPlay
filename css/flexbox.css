@@ -1,0 +1,157 @@
+/* CABEÇALHO */
+
+.cabecalho__container{
+    display: flex;/*torna o container flexivel*/
+    justify-content: space-between;/*distribui os itens alinhados nas extremidades opostas do container*/
+    align-items: center;/*centraliza verticalmente dentro do container*/
+    position: fixed;/* fixa no topo da janela enquanto o usuário rola a página para baixo*/
+    top: 0;/*distância entre o elemento e o topo da janela do navegador quando a posição é fixa*/
+}
+
+.cabecalho__pesquisar__item{
+    display: none;
+}
+
+/* MENU LATERAL */
+
+.menu__container{
+    /*fixando o menu*/
+    position: fixed;
+    bottom: 0%;
+    height: 74px;
+    width: 100%;
+}
+
+.menu__lista{
+    /*alinhando os itens do menu*/
+    display: flex;
+    justify-content: space-around;
+    height: 100%;
+}
+
+.menu__lista li{
+    align-self: center;
+}
+
+.menu__itens{
+    /*alinhando os icones em cima do texto*/
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.menu__lista:nth-child(2),
+.menu__lista:nth-child(3),
+.menu__lista:nth-child(4){
+    display: none;
+}
+
+/* SEÇAO SUPERIOR */
+
+.superior__secao__container{
+    display: flex;
+    align-items: center;/*alinha fora do eixo principal*/
+    white-space: nowrap;/*não deixa o texto quebrar linha*/
+    overflow: scroll;/*aplicar barra de rolagem*/
+    gap: 15px;/*aplicar espaçamento entre os itens da flexbox*/
+}
+
+/* VIDEO */
+
+.videos__container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.videos__item{
+    height: 303px;
+    width: 280px;
+    flex-grow: 1;
+}
+
+/* RODAPE */
+
+.rodape__container{
+    display: flex;
+    /*flex-direction: column;/*muda a flexbox de linha para coluna*/
+    /*flex-wrap: wrap;/*quebra colunas/linhas */
+    flex-flow: column wrap;/*faz as duas de cima em uma linha*/
+}
+
+@media (min-width: 834px) {
+
+    /* CABEÇALHO */
+
+    .cabecalho__pesquisar__item{
+        display: block;
+    }
+
+    /* MENU LATERAL*/
+
+    .menu__container {
+        left: 0;
+        height: auto;
+        width: 74px;
+        top: 80px;
+    }
+
+    .menu__lista {
+        flex-direction: column;
+        justify-content: flex-start;
+        padding-top: 15px;
+        gap: 33px;
+    }
+
+    /* RODAPE */
+
+    .rodape__container{
+        justify-content: space-between;
+    }
+}
+
+@media(min-width: 1440px){
+
+    .menu__container{
+        width: 239px;
+        overflow: scroll;
+    }
+    .menu__lista:nth-child(2),
+    .menu__lista:nth-child(3),
+    .menu__lista:nth-child(4){
+        display: flex;
+    }
+
+    .menu__lista{
+        height: auto;
+        padding: 20px 17px 20px 15px;
+        gap: 15px;
+    }
+
+    .menu__itens{
+        flex-direction: row;
+        gap: 15px;
+        align-items: center;
+    }
+
+    .menu__lista:nth-child(3){
+        flex-direction: column-reverse;
+    }
+    
+    .jogos{
+        order:3;
+    }
+
+    .filmes{
+        order: 2;
+    }
+
+    .premium{
+        order: 1;
+    }
+
+    .maispagina{
+        order: 4;
+    }
+
+}
